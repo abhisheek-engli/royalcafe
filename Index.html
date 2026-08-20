@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RoyalCafe | Fresh Food & Coffee</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: #111827;
+
+    padding: 18px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #f59e0b;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #f59e0b;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: calc(100vh - 70px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(17, 24, 39, 0.72),
+            rgba(17, 24, 39, 0.82)
+        ),
+        url("https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=80")
+        center center / cover no-repeat;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 850px;
+
+    animation: fadeUp 1s ease;
+}
+
+.badge {
+    display: inline-block;
+
+    background: #f59e0b;
+    color: #111827;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 70px);
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #f59e0b;
+}
+
+.hero p {
+    max-width: 700px;
+
+    margin: 0 auto 30px;
+
+    font-size: 20px;
+
+    color: #f3f4f6;
+}
+
+.buttons {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 27px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.primary {
+    background: #f59e0b;
+    color: #111827;
+}
+
+.secondary {
+    border: 2px solid white;
+    color: white;
+}
+
+.secondary:hover {
+    background: white;
+    color: #111827;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section {
+    padding: 80px 7%;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #6b7280;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.menu-card {
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-7px);
+}
+
+.menu-card img {
+    width: 100%;
+
+    height: 200px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.menu-content {
+    padding: 22px;
+}
+
+.menu-content h3 {
+    font-size: 21px;
+
+    margin-bottom: 7px;
+}
+
+.menu-content p {
+    color: #6b7280;
+
+    margin-bottom: 12px;
+}
+
+.price {
+    color: #f59e0b;
+
+    font-size: 21px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.feature {
+    background: white;
+
+    text-align: center;
+
+    padding: 35px 25px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.07);
+}
+
+.feature-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: #6b7280;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    background: #111827;
+
+    color: white;
+
+    text-align: center;
+}
+
+.about .section-title p {
+    color: #9ca3af;
+}
+
+.about-text {
+    max-width: 750px;
+
+    margin: auto;
+
+    color: #d1d5db;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   REVIEWS
+========================= */
+
+.reviews {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.review {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.07);
+}
+
+.stars {
+    color: #f59e0b;
+
+    font-size: 21px;
+
+    margin-bottom: 12px;
+}
+
+.review p {
+    color: #6b7280;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    background: #f1f5f9;
+}
+
+.contact-box {
+    max-width: 750px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 40px 25px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.08);
+}
+
+.contact-box p {
+    color: #6b7280;
+
+    margin: 12px 0;
+}
+
+.whatsapp-btn {
+    background: #25D366;
+
+    color: white;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #030712;
+
+    color: #9ca3af;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+
+/* =========================
+   FLOATING WHATSAPP
+========================= */
+
+.floating-whatsapp {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #25D366;
+
+    color: white;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    font-size: 27px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.3);
+
+    z-index: 999;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 15px 5%;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: calc(100vh - 105px);
+
+        padding:
+            70px 18px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .menu-grid,
+    .features,
+    .reviews {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-card img {
+        height: 210px;
+    }
+
+    .contact-box {
+        padding: 30px 20px;
+    }
+
+    .floating-whatsapp {
+        width: 55px;
+        height: 55px;
+
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header>
+
+    <div class="logo">
+        Royal<span>Cafe</span>
+    </div>
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#menu">Menu</a>
+
+        <a href="#about">About</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            ☕ Fresh • Tasty • Royal
+        </div>
+
+        <h1>
+            Fresh Taste.
+            <br>
+            <span>Royal Experience.</span>
+        </h1>
+
+        <p>
+            Enjoy freshly prepared coffee,
+            delicious food and sweet desserts
+            in a comfortable atmosphere.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                href="#menu"
+                class="btn primary">
+                View Menu
+            </a>
+
+            <a
+                href="#contact"
+                class="btn secondary">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<section id="menu">
+
+    <div class="section-title">
+
+        <h2>
+            Our Popular Menu
+        </h2>
+
+        <p>
+            Freshly prepared with quality ingredients.
+        </p>
+
+    </div>
+
+
+    <div class="menu-grid">
+
+
+        <div class="menu-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80"
+                alt="Premium Coffee">
+
+            <div class="menu-content">
+
+                <h3>
+                    Premium Coffee
+                </h3>
+
+                <p>
+                    Freshly brewed aromatic coffee.
+                </p>
+
+                <div class="price">
+                    ₹149
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+                alt="Royal Burger">
+
+            <div class="menu-content">
+
+                <h3>
+                    Royal Burger
+                </h3>
+
+                <p>
+                    Juicy burger with fresh vegetables.
+                </p>
+
+                <div class="price">
+                    ₹199
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=800&q=80"
+                alt="Fresh Dessert">
+
+            <div class="menu-content">
+
+                <h3>
+                    Fresh Dessert
+                </h3>
+
+                <p>
+                    Sweet and delicious dessert.
+                </p>
+
+                <div class="price">
+                    ₹129
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&w=800&q=80"
+                alt="Grilled Sandwich">
+
+            <div class="menu-content">
+
+                <h3>
+                    Grilled Sandwich
+                </h3>
+
+                <p>
+                    Crispy grilled sandwich with fresh filling.
+                </p>
+
+                <div class="price">
+                    ₹159
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80"
+                alt="Cheese Pizza">
+
+            <div class="menu-content">
+
+                <h3>
+                    Cheese Pizza
+                </h3>
+
+                <p>
+                    Hot cheesy pizza made fresh.
+                </p>
+
+                <div class="price">
+                    ₹249
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80"
+                alt="Chocolate Cake">
+
+            <div class="menu-content">
+
+                <h3>
+                    Chocolate Cake
+                </h3>
+
+                <p>
+                    Rich and creamy chocolate cake.
+                </p>
+
+                <div class="price">
+                    ₹179
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>
+            Why Choose Us?
+        </h2>
+
+        <p>
+            Everything for a perfect cafe experience.
+        </p>
+
+    </div>
+
+
+    <div class="features">
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ☕
+            </div>
+
+            <h3>
+                Fresh Coffee
+            </h3>
+
+            <p>
+                Premium quality coffee prepared fresh.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🥗
+            </div>
+
+            <h3>
+                Fresh Ingredients
+            </h3>
+
+            <p>
+                Quality ingredients selected for every dish.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ⭐
+            </div>
+
+            <h3>
+                Best Experience
+            </h3>
+
+            <p>
+                Comfortable atmosphere and friendly service.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section
+    class="about"
+    id="about">
+
+    <div class="section-title">
+
+        <h2>
+            About RoyalCafe
+        </h2>
+
+    </div>
+
+    <p class="about-text">
+
+        RoyalCafe is a fictional demo business website
+        created as a portfolio project.
+
+        Our goal is to provide delicious food,
+        quality coffee and a comfortable experience
+        for every customer.
+
+    </p>
+
+</section>
+
+
+<!-- =========================
+     REVIEWS
+========================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>
+            What Customers Say
+        </h2>
+
+        <p>
+            Our happy customers love RoyalCafe.
+        </p>
+
+    </div>
+
+
+    <div class="reviews">
+
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "Amazing coffee and very comfortable
+                atmosphere. Definitely coming back!"
+            </p>
+
+            <strong>
+                — Rahul
+            </strong>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "The burger was delicious and
+                the service was great."
+            </p>
+
+            <strong>
+                — Priya
+            </strong>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "Perfect place to chill with friends
+                and enjoy food."
+            </p>
+
+            <strong>
+                — Aman
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+    class="contact"
+    id="contact">
+
+    <div class="section-title">
+
+        <h2>
+            Visit RoyalCafe
+        </h2>
+
+        <p>
+            We would love to serve you.
+        </p>
+
+    </div>
+
+
+    <div class="contact-box">
+
+        <h2>
+            RoyalCafe
+        </h2>
+
+        <p>
+            📍 Delhi, India
+        </p>
+
+        <p>
+            📞 +91 99999 99999
+        </p>
+
+        <p>
+            🕐 Open: 10 AM – 10 PM
+        </p>
+
+
+        <a
+            href="tel:+919999999999"
+            class="btn primary">
+
+            📞 Call Now
+
+        </a>
+
+
+        <a
+            href="https://wa.me/919999999999?text=Hello%20RoyalCafe%2C%20I%20want%20to%20place%20an%20order."
+            target="_blank"
+            class="btn whatsapp-btn">
+
+            💬 WhatsApp
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026 RoyalCafe. All Rights Reserved.
+    </p>
+
+    <p>
+        Fresh Food • Great Coffee • Royal Experience
+    </p>
+
+</footer>
+
+
+<!-- =========================
+     FLOATING WHATSAPP
+========================= -->
+
+<a
+    class="floating-whatsapp"
+    href="https://wa.me/919999999999?text=Hello%20RoyalCafe%2C%20I%20want%20to%20place%20an%20order."
+    target="_blank"
+    aria-label="WhatsApp">
+
+    💬
+
+</a>
+
+
+</body>
+</html>
